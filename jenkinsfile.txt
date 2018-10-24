@@ -1,0 +1,30 @@
+#!/usr/bin/env groovy
+
+parallel(
+
+ "branch 1" : {
+  
+               node()
+			     {
+				  stage('prepare')
+				  {
+				   echo "Preparing stage"
+				  }
+				  
+				  stage ('Clone Repository')
+				  {
+				    checkout scm
+				  }
+				  
+				  stage ('Build with gradle')
+				  {
+				    gradlew build
+				  }
+				  
+				  stage ('Test')
+				  {
+				   echo "Testing.."
+				  }
+				  }
+				  }
+				  )
