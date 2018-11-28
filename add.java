@@ -7,7 +7,7 @@ public static void main(String[] args)
   b=20;
   d=19;
   
-  c=a+b+d+23;
+  c=a+b+d+23+33;
   
   System.out.println(c);
   
